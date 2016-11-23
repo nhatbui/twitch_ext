@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+
+  "name": "Bard",
+  "short_name": "Bard",
+  "description": "Search the land far and wide for the bard.",
+  "version": "0.01",
+  "icons": {},
+  "background": {
+    "scripts": ["checkIfTwitch.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": {},
+    "default_title": "twitch_bard"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": [
+        "jquery-3.1.1.slim.min.js",
+        "main.js"
+      ],
+      "css": [],
+      "exclude_globs": ["https://www.twitch.tv/directory/*",
+        "https://www.twitch.tv/p/*",
+        "https://www.twitch.tv/products/*",
+        "https://www.twitch.tv/*/manager*",
+        "https://www.twitch.tv/*/dashboard",
+        "https://www.twitch.tv/broadcast",
+        "https://www.twitch.tv/messages/*",
+        "https://www.twitch.tv/settings"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "assets/bard.png"
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
