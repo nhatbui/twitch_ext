@@ -31,7 +31,7 @@ function BardSearcher() {
                     return;
                 }
                 // Grab the actual span element with the message content
-                var messageElement = chatMessage.children(twitchChatMessageContent);
+                var messageElement = chatMessage.find(twitchChatMessageContent);
 
                 parseMsgHTML(messageElement);
             });
