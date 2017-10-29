@@ -1,12 +1,12 @@
 // These are variables for Twitch elements related to chat.
 // We expose them here so changes can be easily made if Twitch changes them.
-twitchChatUlClass = ".chat-lines";
-twitchChatMessageClass1 = ".message-line";
-twitchChatMessageClass2 = ".chat-line";
-twitchChatMessageContent = ".message";
+twitchChatUlClass = ".chat-list__lines .simplebar-scroll-content .simplebar-content .full-height";
+twitchChatMessageClass1 = ".chat-line__message";
+twitchChatMessageContent = "span:nth-child(4)";
 
 // Twitch chat message element: rich with media.
 var parseMsgHTML = function (msgHTML) {
+  //console.log(msgHTML.text());
   var contents = msgHTML.html(
     msgHTML
       .text()
@@ -26,7 +26,7 @@ function BardSearcher() {
             mutation.addedNodes.forEach(function (addedNode) {
                 // At this point it's potentially a chatMessage object.
                 var chatMessage = $(addedNode);
-                if (!chatMessage.is(twitchChatMessageClass1, twitchChatMessageClass2)) {
+                if (!chatMessage.is(twitchChatMessageClass1)) {
                     // this isn't a chat message, skip processing.
                     return;
                 }
