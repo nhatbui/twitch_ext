@@ -16,20 +16,21 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.twitch.tv/*"],
+      "matches": ["https://go.twitch.tv/*"],
       "js": [
         "jquery-3.1.1.slim.min.js",
         "main.js"
       ],
       "css": [],
-      "exclude_globs": ["https://www.twitch.tv/directory/*",
-        "https://www.twitch.tv/p/*",
-        "https://www.twitch.tv/products/*",
-        "https://www.twitch.tv/*/manager*",
-        "https://www.twitch.tv/*/dashboard",
-        "https://www.twitch.tv/broadcast",
-        "https://www.twitch.tv/messages/*",
-        "https://www.twitch.tv/settings"
+      "exclude_globs": [
+        "https://go.twitch.tv/directory/*",
+        "https://go.twitch.tv/p/*",
+        "https://go.twitch.tv/products/*",
+        "https://go.twitch.tv/*/manager*",
+        "https://go.twitch.tv/*/dashboard",
+        "https://go.twitch.tv/broadcast",
+        "https://go.twitch.tv/messages/*",
+        "https://go.twitch.tv/settings"
       ],
       "run_at": "document_end"
     }
